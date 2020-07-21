@@ -1,0 +1,51 @@
+<div class="container">
+<div class="errors_messages">
+<% if @user.errors.any? %>
+        <h3><%= @user.errors.count %>errors prohibited this book from being saved:</h3>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+</div>
+</div>
+<style>
+.errors_messages {
+  color: red;
+}
+</style>
+
+
+<div class="container">
+
+
+<h2 class="header-space">User info</h2>
+
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :Name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+  <br>
+  <div class="form-group has-icon user-edit">
+    <%= f.label :Image %><br/>
+    <%= f.attachment_field :profile_image, placeholder: "Image", class: "user-edit-form" %>
+  </div>
+
+  <div class="field user-edit">
+    <%= f.label :Introduction %>
+    <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Update User" %>
+  </div>
+
+<% end %>
+
+
+
+
+
