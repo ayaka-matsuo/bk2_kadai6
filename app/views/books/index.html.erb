@@ -84,6 +84,14 @@
 					 					<td>
 					 						<%= book.body %>
 					 					</td>
+					 					<td>
+					 						<% if current_user.already_favorited?(book) %>
+							                  <%= link_to 'いいねを外す', book_favorites_path(book), method: :delete %>
+							                  <% else %>
+							                  <%= link_to 'いいね', book_favorites_path(book) %>
+											  <% end %>
+											  <%= book.favorites.count %>
+										</td>
 					 				</tr>
 				 				<% end %>
 				 			</tbody>
