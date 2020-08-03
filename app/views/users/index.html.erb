@@ -19,7 +19,7 @@
 			  					</tbody>
 			  				</table>
 
-							<%= link_to "", edit_user_path(current_user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+							<%= link_to "", edit_user_path(current_user.id), class: "col-xs-10 btn btn-default glyphicon glyphicon-wrench" %>
 
 						</div>
 
@@ -29,12 +29,12 @@
 							<%= form_for(@book) do |f| %>
 
 								<h5>Title</h5>
-								<%= f.text_field :title, :size=>"32.8x26" %>
+								<%= f.text_field :title, :size=>"30x26" %>
 
 								<h5>Opinion</h5>
-								<%= f.text_area :body, :size=>"31.8x2" %>
+								<%= f.text_area :body, :size=>"29x2" %>
 
-								<%= f.submit 'Create Book', class: "col-xs-12 btn btn-primary" %>
+								<%= f.submit 'Create Book', class: "col-xs-10 btn btn-primary" %>
 							<% end %>
 						</div>
 					</div>

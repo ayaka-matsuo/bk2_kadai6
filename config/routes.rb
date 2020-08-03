@@ -5,7 +5,8 @@ devise_for :users
 root to: "home#index"
 resources :users
 resources :books do
-	resources :favorite, only: [:destroy, :create]
+	resource :favorite, only: [:destroy, :create]
+	resources :book_comments, only: [:create, :destroy]
 end
 
 
