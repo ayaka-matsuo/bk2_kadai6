@@ -1,0 +1,16 @@
+<% book_comments.each do |comment| %>
+	<% unless comment.id.nil? %>
+		<table class="table">
+				<tbody>
+					<tr>
+						<td><%= comment.comment %></td>
+						<% if comment.user == current_user %>
+							<td>
+								<%= link_to "削除", book_book_comment_path(comment.book.id, comment.id), method: :delete, remote: true, class: "btn btn-danger pull-right" %>
+							</td>
+						<% end %>
+					</tr>
+				</tbody>
+		</table>
+	<% end %>
+<% end %>

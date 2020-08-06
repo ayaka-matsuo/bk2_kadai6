@@ -1,0 +1,6 @@
+<%= form_with(model: [book, comment]) do |f| %>
+
+	<%= f.text_area :comment, class: "form-control", placeholder: "コメントをここに" %>
+	<%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+
+<% end %>

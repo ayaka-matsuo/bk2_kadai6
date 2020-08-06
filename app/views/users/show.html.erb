@@ -50,6 +50,7 @@
 						 				<th width="165">Title</th>
 						 				<th width="250">Opinion</th>
 						 				<th></th>
+						 				<th></th>
 						 			</tr>
 						  		</thead>
 						  		<tbody>
@@ -64,6 +65,12 @@
 						 					<td>
 						 						<%= book.body %>
 						 					</td>
+						 					<td>
+							 					<div id="favorites_buttons_<%= book.id %>">
+						 									<%= render partial: 'books/formfavorite', locals: { book: book} %>
+						 						</div>
+					 						</td>
+
 						 					<td>
 												<%= "コメント数：" %><%= book.book_comments.count %>
 											</td>
